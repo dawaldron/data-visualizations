@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Indianapolis Potholes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+  .footnote {
+    color:#aaa;
+    font-size:11px;
+    font-family:Roboto,Segoe UI,sans-serif;
+    font-weight:400;
+  }
+  </style>
+</head>
+<body>
+  <div class="title">Potholes in Indianapolis</div>
+  <div style="font-size:16px;color:#689038">Open pothole complaints (through Apr 4)</div>
+  <div id="chart1" style="width:550px"></div>
+  <div class="footnote">Source: Mayor's Action Center</div>
+  <div style="font-size:16px;margin-top:15px"><span style="color:indianred">High</span>, <span style="color:steelblue">Low</span>, and <span style="color:#aaa">Average</span> temperatures (14 day avg.)</div>
+  <div id="chart2" style="width:550px"></div>
+  <div class="footnote">Source: NOAA</div>
+  <div style="font-size:16px;margin-top:15px"><span style="color:gray">Daily precipitation (14 day avg.)</span></div>
+  <div id="chart3" style="width:550px"></div>
+  <div class="footnote">Source: NOAA</div>
+  <div class="footnote"><a href="https://www.waldrn.com">www.waldrn.com</a></div>
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var parseTime = d3.timeParse("%Y-%m-%d");
+
+    d3.csv("open_potholes.csv", function(d) {
+      d.date = parseTime(d.date);
+      d.potholes = +d.potholes;
+      d.TMINavg = +d.TMINavg;
+      d.TAVGavg = +d.TAVGavg;
+      d.TMAXavg = +d.TMAXavg;
+      d.PRCPavg = +d.PRCPavg;
+      return(d);
+    }, function(error, data) {
+      if (error) throw error;
+
+      console.log(data);
+
+      chart1();
+      chart2();
+      chart3();
+
+      function chart1() {
+        var svg = d3.select("#chart1")
+          .append("svg")
+          .attr("width", +d3.select("#chart1").style("width").replace("px",""))
+          .attr("height", +d3.select("#chart1").style("width").replace("px","") * .4),
+          margin = {
+            top: 10,
+            right: 50,
+            bottom: 20,
+            left: 40
+          },
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom,
+          g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var x = d3.scaleTime()
+          .rangeRound([0, width]);
+
+        var y = d3.scaleLinear()
+          .rangeRound([height, 0]);
+
+        var linePotholes = d3.line()
+          .x(function(d) { return x(d.date); })
+          .y(function(d) { return y(d.potholes); });
+
+        x.domain(d3.extent(data, function(d) { return d.date; }));
+        y.domain(d3.extent(data, function(d) { return d.potholes; }));
+
+        g.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x)
+              .ticks(5)
+              .tickFormat(d3.timeFormat("%Y")));
+
+        g.append("g")
+            .call(d3.axisLeft(y));
+
+        g.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", "#82b446")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-width", 1.5)
+            .attr("d", linePotholes);
+      }
+
+
+      function chart2() {
+        var svg = d3.select("#chart2")
+          .append("svg")
+          .attr("width", +d3.select("#chart2").style("width").replace("px",""))
+          .attr("height", +d3.select("#chart2").style("width").replace("px","") * .4),
+          margin = {
+            top: 10,
+            right: 50,
+            bottom: 20,
+            left: 40
+          },
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom,
+          g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var x = d3.scaleTime()
+          .rangeRound([0, width]);
+
+        var y = d3.scaleLinear()
+          .rangeRound([height, 0]);
+
+        var lineHigh = d3.line()
+          .x(function(d) { return x(d.date); })
+          .y(function(d) { return y(d.TMAXavg); });
+
+        var lineAvg = d3.line()
+          .x(function(d) { return x(d.date); })
+          .y(function(d) { return y(d.TAVGavg); });
+
+        var lineLow = d3.line()
+          .x(function(d) { return x(d.date); })
+          .y(function(d) { return y(d.TMINavg); });
+
+        x.domain(d3.extent(data, function(d) { return d.date; }));
+        y.domain([d3.min(data, function(d) { return d.TMINavg; }),
+                  d3.max(data, function(d) { return d.TMAXavg; })]);
+
+        g.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x)
+              .ticks(5)
+              .tickFormat(d3.timeFormat("%Y")));
+
+        g.append("g")
+            .call(d3.axisLeft(y));
+
+        g.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", "indianred")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-width", 1.5)
+            .attr("d", lineHigh);
+
+        g.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", "#aaa")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-width", 1.5)
+            .attr("d", lineAvg);
+
+        g.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-width", 1.5)
+            .attr("d", lineLow);
+      }
+
+
+      function chart3() {
+        var svg = d3.select("#chart3")
+          .append("svg")
+          .attr("width", +d3.select("#chart2").style("width").replace("px",""))
+          .attr("height", +d3.select("#chart2").style("width").replace("px","") * .4),
+          margin = {
+            top: 10,
+            right: 50,
+            bottom: 20,
+            left: 40
+          },
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom,
+          g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var x = d3.scaleTime()
+          .rangeRound([0, width]);
+
+        var y = d3.scaleLinear()
+          .rangeRound([height, 0]);
+
+        var linePRCP = d3.line()
+          .x(function(d) { return x(d.date); })
+          .y(function(d) { return y(d.PRCPavg); });
+
+        x.domain(d3.extent(data, function(d) { return d.date; }));
+        y.domain([d3.min(data, function(d) { return d.PRCPavg; }),
+                  d3.max(data, function(d) { return d.PRCPavg; })]);
+
+        g.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x)
+              .ticks(5)
+              .tickFormat(d3.timeFormat("%Y")));
+
+        g.append("g")
+            .call(d3.axisLeft(y));
+
+        g.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", "gray")
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-width", 1.5)
+            .attr("d", linePRCP);
+      }
+    });
+  </script>
+</body>
