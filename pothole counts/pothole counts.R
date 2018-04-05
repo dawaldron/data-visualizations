@@ -28,6 +28,7 @@ countOpen <- function(day.i, data) {
 daily.potholes <- rbindlist(lapply(daylist, countOpen, data = potholes))
 
 # climate data requested from https://www.ncdc.noaa.gov/cdo-web/search
+# last updated 2018-04-05, current through 2018-03-31
 weather <- fread('1303915.csv')
 weather <- weather[STATION == 'USW00093819',
                    .(date = as.Date(DATE),
@@ -54,7 +55,6 @@ write.csv(daily.potholes, 'open_potholes.csv', row.names = F)
 write.csv(weekly.potholes, 'weekly_potholes.csv', row.names = F)
 
 # this prints the number of new street chuckholes for each month
-# last updated 2018-04-05, current through 2018-03-31
 new.monthly <- daily.potholes[, .(newpotholes = sum(newpotholes)),
                               .(year = year(date), month = month(date))][
                                 order(year, month)]
