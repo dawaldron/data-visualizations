@@ -45,7 +45,7 @@ weather <- weather[STATION == 'USW00093819',
 # match potholes to weather data
 daily.potholes <- weather[daily.potholes, on = 'date']
 
-# weekly open/close counts
+# weekly new/close counts
 weekly.potholes <- daily.potholes[, lapply(.SD, sum),
                                   .(week = floor_date(date - 1, "weeks") + 1),
                                   .SDcols = c('newpotholes', 'closedpotholes')]
