@@ -1,0 +1,23 @@
+ffmpeg -framerate 4 -f image2 -i "Early December winter storm_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm1.mp4
+ffmpeg -i storm1.mp4 -vf "crop=900:740:300:25" storm1_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "January 2018 North American blizzard_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm2.mp4
+ffmpeg -i storm2.mp4 -vf "crop=500:650:700:0" storm2_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "First nor'easter_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm3.mp4
+ffmpeg -i storm3.mp4 -vf "crop=500:650:700:0" storm3_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "Second nor'easter_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm4.mp4
+ffmpeg -i storm4.mp4 -vf "crop=500:650:700:0" storm4_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "Third nor'easter_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm5.mp4
+ffmpeg -i storm5.mp4 -vf "crop=500:650:700:0" storm5_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "Fourth nor'easter_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm6.mp4
+ffmpeg -i storm6.mp4 -vf "crop=500:650:700:0" storm6_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "Late March snow band_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm7.mp4
+ffmpeg -i storm7.mp4 -vf "crop=900:500:300:25" storm7_c.mp4
+
+ffmpeg -framerate 4 -f image2 -i "Late February north_%d.png" -crf 10 -c:v libx264 -vf "format=yuv420p,minterpolate='mi_mode=blend:fps=30'" storm9.mp4
+ffmpeg -i storm9.mp4 -vf "crop=700:500:200:0" storm9_c.mp4
