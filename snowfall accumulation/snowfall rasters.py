@@ -18,6 +18,7 @@ import csv
 
 os.chdir('C:/Users/dwald/Documents/Blog/Posts/Snowfall/Python/Storms')
 
+# get stormlist
 stormList = []
 with open('stormlist.csv', 'rt') as f:
     reader = csv.reader(f)
@@ -33,6 +34,7 @@ with open('stormlist.csv', 'rt') as f:
         stormList2 = {'storm':row[0], 'files':fileList}
         stormList.append(stormList2)
 
+# create new rasters
 for i in range(0,len(stormList)):
     print('i: ' + str(i))
     for j in range(0,len(stormList[i]['files'])):

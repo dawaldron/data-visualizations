@@ -11,6 +11,7 @@ import numpy as np
 
 os.chdir('C:/Users/dwald/Documents/Blog/Posts/Snowfall/Python/Storms')
 
+# get stormlist
 stormList = []
 with open('stormlist.csv', 'rt') as f:
     reader = csv.reader(f)
@@ -26,6 +27,7 @@ with open('stormlist.csv', 'rt') as f:
         stormList2 = {'storm':row[0], 'files':fileList}
         stormList.append(stormList2)
 
+# add and style layers
 def styleRaster(filename):
     QgsMapLayerRegistry.instance().removeAllMapLayers()
     
@@ -177,7 +179,7 @@ def styleRaster(filename):
     QTimer.singleShot(10, renderImage)
 
 
-
+# save image to file. based on canvas position.
 def renderImage():
     # size = QSize(800, 1200)
     # size = QSize(800, 1200)
@@ -197,7 +199,7 @@ def renderImage():
     painter.end()
     image.save('C:/Users/dwald/Documents/Blog/Posts/Snowfall/Python/Storms/png/' + filenameG + '.png')
 
-
+# global variable for image names
 filenameG = ''
 
 filenames = []
@@ -208,11 +210,8 @@ for i in range(0,len(stormList)):
         filenames.append(stormList[i]['storm'] + '_' + str(stormList[i]['files'][j]['frame']))
 
 
-
-# -158524,-1355071 : 6784827,2037342
-# 1:22,467,967
-# QSize(800, 1200)
-
+# I simply could not get this to work right in a loop with the
+# timing of the render and save, so I just ran every frame individually.
 styleRaster(filenames[0])
 styleRaster(filenames[1])
 styleRaster(filenames[2])
