@@ -4,13 +4,13 @@ The R script reads CPS voter supplement microdata from IPUMS-CPS and implements 
 
 Currently runs for years 1980 to 2018. Required variables are:
 
-YEAR
-WTFINL
-STATFIP
-AGE
-VOTED
-EDUC
-RACE
-HISPAN
+* YEAR
+* WTFINL
+* STATFIP
+* AGE
+* VOTED
+* EDUC
+* RACE
+* HISPAN
 
 Note: VESUPPWT is identical to WTFINL in IPUMS-CPS data
