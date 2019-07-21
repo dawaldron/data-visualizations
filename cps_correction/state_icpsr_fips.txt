@@ -1,0 +1,52 @@
+STATEFIP	STATEICP	STATENM
+1	41	Alabama
+2	81	Alaska
+4	61	Arizona
+5	42	Arkansas
+6	71	California
+8	62	Colorado
+9	1	Connecticut
+10	11	Delaware
+11	55	District of Columbia
+12	43	Florida
+13	44	Georgia
+15	82	Hawaii
+16	63	Idaho
+17	21	Illinois
+18	22	Indiana
+19	31	Iowa
+20	32	Kansas
+21	51	Kentucky
+22	45	Louisiana
+23	2	Maine
+24	52	Maryland
+25	3	Massachusetts
+26	23	Michigan
+27	33	Minnesota
+28	46	Mississippi
+29	34	Missouri
+30	64	Montana
+31	35	Nebraska
+32	65	Nevada
+33	4	New Hampshire
+34	12	New Jersey
+35	66	New Mexico
+36	13	New York
+37	47	North Carolina
+38	36	North Dakota
+39	24	Ohio
+40	53	Oklahoma
+41	72	Oregon
+42	14	Pennsylvania
+44	5	Rhode Island
+45	48	South Carolina
+46	37	South Dakota
+47	54	Tennessee
+48	49	Texas
+49	67	Utah
+50	6	Vermont
+51	40	Virginia
+53	73	Washington
+54	56	West Virginia
+55	25	Wisconsin
+56	68	Wyoming
