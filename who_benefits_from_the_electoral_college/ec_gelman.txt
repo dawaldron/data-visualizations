@@ -1,0 +1,51 @@
+State	Pr(State EV are critical)	Pr(State vote is tied | State EV are critical)	P(your vote is decisive)	pVote
+New Hampshire	4%	1 in 40 thousand	1 in 1 million	0.000001
+Colorado	9%	1 in 100 thousand	1 in 1 million	0.000001
+Nevada	3%	1 in 60 thousand	1 in 2 million	0.0000005
+Wisconsin	10%	1 in 200 thousand	1 in 2 million	0.0000005
+Pennsylvania	17%	1 in 400 thousand	1 in 2 million	0.0000005
+Michigan	13%	1 in 300 thousand	1 in 3 million	3.33333E-07
+New Mexico	7%	1 in 200 thousand	1 in 3 million	3.33333E-07
+North Carolina	6%	1 in 200 thousand	1 in 3 million	3.33333E-07
+Florida	12%	1 in 400 thousand	1 in 3 million	3.33333E-07
+Maine	4%	1 in 200 thousand	1 in 5 million	0.0000002
+Minnesota	9%	1 in 1 million	1 in 10 million	0.0000001
+Virginia	11%	1 in 1 million	1 in 10 million	0.0000001
+Ohio	7%	1 in 2 million	1 in 20 million	0.00000005
+Iowa	3%	1 in 1 million	1 in 30 million	3.33333E-08
+Rhode Island	4%	1 in 1 million	1 in 30 million	3.33333E-08
+Connecticut	8%	1 in 3 million	1 in 40 million	0.000000025
+Oregon	8%	1 in 3 million	1 in 40 million	0.000000025
+Arizona	5%	1 in 2 million	1 in 40 million	0.000000025
+Georgia	7%	1 in 4 million	1 in 60 million	1.66667E-08
+South Carolina	4%	1 in 4 million	1 in 100 million	0.00000001
+Alaska	<1%	1 in 2 million	1 in 100 million	0.00000001
+Washington	11%	1 in 20 million	1 in 200 million	0.000000005
+Delaware	<1%	1 in 3 million	1 in 300 million	3.33333E-09
+New Jersey	11%	1 in 40 million	1 in 400 million	2.5E-09
+Mississippi	3%	1 in 20 million	1 in 1 billion	0.000000001
+Illinois	16%	1 in 100 million	1 in 1 billion	0.000000001
+Missouri	4%	1 in 30 million	1 in 1 billion	0.000000001
+Texas	11%	1 in 90 million	1 in 1 billion	0.000000001
+Hawaii	4%	1 in 50 million	1 in 1 billion	0.000000001
+Kansas	3%	1 in 40 million	1 in 1 billion	0.000000001
+Utah	3%	1 in 50 million	1 in 2 billion	5E-10
+Montana	<1%	1 in 30 million	1 in 2 billion	5E-10
+Arkansas	3%	1 in 70 million	1 in 3 billion	3.33333E-10
+Indiana	5%	1 in 100 million	1 in 3 billion	3.33333E-10
+South Dakota	<1%	1 in 30 million	1 in 3 billion	3.33333E-10
+Tennessee	5%	1 in 100 million	1 in 3 billion	3.33333E-10
+New York	22%	1 in 1 billion	1 in 3 billion	3.33333E-10
+North Dakota	<1%	1 in 50 million	1 in 4 billion	2.5E-10
+Nebraska	<1%	1 in 80 million	1 in 4 billion	2.5E-10
+Massachusetts	11%	1 in 500 million	1 in 4 billion	2.5E-10
+Louisiana	3%	1 in 200 million	1 in 5 billion	2E-10
+Alabama	4%	1 in 300 million	1 in 7 billion	1.42857E-10
+California	61%	1 in 4 billion	1 in 7 billion	1.42857E-10
+Kentucky	3%	1 in 300 million	1 in 8 billion	1.25E-10
+West Virginia	<1%	1 in 200 million	1 in 9 billion	1.11111E-10
+Maryland	9%	1 in 1 billion	1 in 10 billion	1E-10
+Vermont	<1%	1 in 100 million	1 in 10 billion	1E-10
+Idaho	<1%	1 in 100 million	1 in 10 billion	1E-10
+Wyoming	<1%	1 in 300 million	1 in 30 billion	3.33333E-11
+Oklahoma	3%	1 in 1 billion	1 in 30 billion	3.33333E-11
