@@ -1,0 +1,27 @@
+Candidate Name,Committee Name,Candidate ID,Committee ID
+Cory Booker,Cory 2020,P00009795,C00695510
+Kamala Harris,Kamala Harris for the People,P00009423,C00694455
+Joe Biden,Biden for President,P80000722,C00703975
+Amy Klobuchar,Amy for America,P80006117,C00696419
+Bernie Sanders,Bernie 2020,P60007168,C00696948
+Elizabeth Warren,Warren for President,P00009621,C00693234
+Pete Buttigieg,Pete for America,P00010298,C00697441
+Beto O'Rourke,Beto for America,P00010793,C00699090
+Julián Castro,Julián for the Future,P00009092,C00693044
+John Delaney,Friends of John Delaney,P00006213,C00508416
+Jay Inslee,Inslee for America,P00010454,C00698050
+Kirsten Gillibrand,Gillibrand 2020,P00009290,C00694018
+John Hickenlooper,Hickenlooper 2020,P00010520,C00698258
+Andrew Yang,Friends of Andrew Yang,P00006486,C00659938
+Tulsi Gabbard,Tulsi Now,P00009183,C00693713
+Mike Gravel,Mike Gravel for President Exploratory Committee,P00011254,C00700609
+Tim Ryan,Tim Ryan Victory Fund ,P00011338,C00701979
+Eric Swalwell,Swalwell for America,P00011312,C00701698
+Wayne Messam,Wayne Messam for America,P00010827,C00699280
+Marianne Williamson,Marianne Williamson for President,P00009910,C00696054
+Steve Bullock,Bullock for President,P00011999,C00706416
+Seth Moulton,Seth Moulton for America,P00011866,C00704510
+Michael Bennet,Bennet for America,P00011833,C00705186
+Donald Trump,Donald J. Trump for President,P80001571,C00580100
+Bill de Blasio,De Blasio 2020,P00012054,C00706697
+Tom Steyer,Tom Steyer 2020 ,P00012716,C00711614
