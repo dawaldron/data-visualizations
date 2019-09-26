@@ -1,6 +1,6 @@
 # ActBlue data for 2020 Democratic Primary
 
-read_actblue_data.R parses the .fec file submitted by ActBlue to the FEC with donations through July 2019.
+read_actblue_data.R parses the .fec file submitted by ActBlue to the FEC with donations through July 2019. This file can be downloaded in this zip archive: https://cg-519a459a-0ea3-42c2-b7bc-fa1143481f74.s3-us-gov-west-1.amazonaws.com/bulk-downloads/electronic/20190801.zip. The ActBlue data is contained in a 5.9GB file named "1344765.fec".
 
 tabulate_actblue_data.R creates the summaries of unique donor counts used for the charts at https://waldrn.com/candidate-support-by-occupation-in-the-2020-democratic-primary/
 
